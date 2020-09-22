@@ -19,17 +19,17 @@ body {
 .field {
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 65px;
-  font-size: 12px;
+  flex-basis: 80px;
+  font-size: 15px;
   color: rgb(0, 255, 191);
 }
 
 .value {
-  margin-right: 6px;
+  margin-right: 2px;
 }
 
 .notification-msg {
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
   line-height: 50px;
   color: rgb(0, 255, 191);
@@ -41,10 +41,26 @@ body {
   }
 }
 
+@media screen and (min-width: 375px) {
+  .container {
+    width: 360px;
+  }
+
+  .field {
+    flex-basis: 90px;
+    font-size: 16px;
+  }
+
+  .notification-msg {
+    font-size: 24px;
+  }
+}
+
 @media screen and (min-width: 425px) {
   .container {
     width: 420px;
   }
+
   .field {
     flex-basis: 100px;
     font-size: 18px;
