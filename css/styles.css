@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  width: 300px;
+  width: 320px;
   margin: 0 auto;
 }
 
@@ -41,6 +41,24 @@ body {
   }
 }
 
+@media screen and (min-width: 425px) {
+  .container {
+    width: 420px;
+  }
+  .field {
+    flex-basis: 100px;
+    font-size: 18px;
+  }
+
+  .value {
+    margin-right: 5px;
+  }
+
+  .notification-msg {
+    font-size: 28px;
+  }
+}
+
 @media screen and (min-width: 540px) {
   body {
     background-image: url("../images/snowman_540x960-min.jpg");
@@ -65,7 +83,6 @@ body {
 
   .notification-msg {
     font-size: 48px;
-    line-height: 50px;
   }
 }
 
