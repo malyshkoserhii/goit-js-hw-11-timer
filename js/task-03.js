@@ -1,10 +1,11 @@
 class CountdownTimer {
-  constructor(targetDate) {
+  constructor({ selector, targetDate }) {
     this.targetDate = new Date(targetDate);
-    this.daysRef = document.querySelector('span[data-value="days"]');
-    this.hoursRef = document.querySelector('span[data-value="hours"]');
-    this.minutesRef = document.querySelector('span[data-value="mins"]');
-    this.secondsRef = document.querySelector('span[data-value="secs"]');
+    this.selector = document.querySelector(`${selector}`);
+    this.daysRef = this.selector.querySelector('span[data-value="days"]');
+    this.hoursRef = this.selector.querySelector('span[data-value="hours"]');
+    this.minutesRef = this.selector.querySelector('span[data-value="mins"]');
+    this.secondsRef = this.selector.querySelector('span[data-value="secs"]');
   }
 
   countdown() {
@@ -21,7 +22,6 @@ class CountdownTimer {
 
   _updateTimer(time) {
     const days = this._pad(Math.floor(time / (1000 * 60 * 60 * 24)));
-
     const hours = this._pad(
       Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
     );
@@ -46,6 +46,9 @@ class CountdownTimer {
   }
 }
 
-const newYearTimer = new CountdownTimer("Jan 01, 2021");
+const newYearTimer = new CountdownTimer({
+  selector: "#timer-1",
+  targetDate: "Jan 01, 2021",
+});
 
 newYearTimer.countdown();
